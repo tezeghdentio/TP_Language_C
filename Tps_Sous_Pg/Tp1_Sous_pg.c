@@ -17,7 +17,7 @@ float division(int x,int y)
 {
     return(x/y);
 }
-int saisir(char ch)
+int saisir(char ch[100])
 {
     int x;
     printf(ch);
@@ -27,9 +27,9 @@ int saisir(char ch)
 
 int main()
 {
-    a=saisir("Donner a");
-    b=saisir("Donner b");
-    choix=saisir(("donner votre choix \n1 Pour la somme\n2Pour la soustraction \n3Pour le produit \n4 Pour la division\n");  
+    a=saisir("Donner a\n");
+    b=saisir("Donner b\n");
+    choix=saisir("donner votre choix \n1 Pour la somme\n2Pour la soustraction \n3Pour le produit \n4 Pour la division\n");  
     
     switch (choix)
     {
