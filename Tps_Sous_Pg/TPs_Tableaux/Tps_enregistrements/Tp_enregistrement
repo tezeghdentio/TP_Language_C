@@ -1,0 +1,76 @@
+#include<stdio.h>
+int main()
+{
+        struct personne
+        {
+
+                float ds,dc,m;
+                char nom[25],prenom[25];
+       
+        };
+        personne p[100],ta[100],tr[100];
+int i,n,n1,n2;
+printf("donner le nombre d'eleves");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+
+        printf("donner nom %d\n",i+1);
+        scanf("%s",&p[i].nom);
+                printf("donner prenom\n",i+1);
+        scanf("%s",&p[i].prenom);
+                printf("donner ds\n");
+        scanf("%f",&p[i].ds);
+                printf("donner dc\n");
+        scanf("%f",&p[i].dc);
+       
+}
+for(i=0;i<n;i++){
+        p[i].m=((p[i].ds*2)+p[i].dc)/3;
+}
+printf("\n************ afficher tableau***********\n");
+for(i=0;i<n;i++)
+{
+
+        printf("le nom est %s\n",p[i].nom);
+        printf("le prenom est %s\n",p[i].prenom);
+        printf("le moyenne est %f\n",p[i].m);
+       
+}
+//eclatement du tableau
+n1=0;
+n2=0;
+for(i=0;i<n;i++){
+        if(p[i].m>=10)
+        {
+                ta[n1]=p[i];
+                n1++;
+        }
+        else
+        {
+                tr[n2]=p[i];
+                n2++;
+        }
+       
+}
+//affichage des admis
+printf("\n************ Admis***********\n");        
+for(i=0;i<n1;i++)
+{
+
+        printf("le nom est %s\n",ta[i].nom);
+        printf("le prenom est %s\n",ta[i].prenom);
+        printf("le moyenne est %f\n",ta[i].m);
+       
+}
+//affichage des refusés
+printf("\n************ refusés***********\n");
+for(i=0;i<n2;i++)
+{
+
+        printf("le nom est %s\n",tr[i].nom);
+        printf("le prenom est %s\n",tr[i].prenom);
+        printf("le moyenne est %f\n",tr[i].m);
+       
+}
+}
