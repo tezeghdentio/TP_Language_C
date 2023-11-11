@@ -15,9 +15,10 @@ int soustraction(int x,int y)
 }
 float division(int x,int y)
 {
+
     return(x/y);
 }
-int saisir(char ch[100])
+int saisir(char ch[70])
 {
     int x;
     printf(ch);
