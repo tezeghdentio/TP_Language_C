@@ -17,17 +17,19 @@ float division(int x,int y)
 {
     return(x/y);
 }
+int saisir(char ch)
+{
+    int x;
+    printf(ch);
+    scanf("%d",&x);
+    return(x);
+}
 
 int main()
 {
-    printf("donner a");
-    scanf("%d",&a);
-      
-    printf("donner b");
-    scanf("%d",&b);
-    printf("donner votre choix");
-    scanf("%d",&choix);
-
+    a=saisir("Donner a");
+    b=saisir("Donner b");
+    choix=saisir(("donner votre choix \n1 Pour la somme\n2Pour la soustraction \n3Pour le produit \n4 Pour la division\n");  
     
     switch (choix)
     {
@@ -37,9 +39,19 @@ int main()
     case 2:
         printf("%d-%d=%d",a,b,soustraction(a,b));
         break;
-        case 3:
+    case 3:
         printf("%d*%d=%d",a,b,produit(a,b));
         break;
+    case 4:if(b!=0)
+            {
+                printf("%d/%d=%.3f",a,b,division(a,b));
+            }else
+                {
+                  printf("Division par 0 Impossible");  
+                }
+        
+        break;
+
     default:printf("erreur de choix");
         break;
     }
